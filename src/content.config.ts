@@ -95,7 +95,7 @@ const insights = defineCollection({
     category: z.string(),
     author: z.string(),
     summary: z.string(),
-    sourceUrl: z.string().url(),
+    sourceUrl: z.string().url().optional(),
     pdfPath: z.string(),
     pageCount: z.number().int().positive(),
     readingMinutes: z.number().int().positive(),

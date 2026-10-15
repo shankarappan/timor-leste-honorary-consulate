@@ -119,14 +119,18 @@ const structuredData = {
           <a class="button" href={article.data.pdfPath} download>
             Download PDF
           </a>
-          <a
-            class="publication__secondary"
-            href={article.data.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View original publication <span aria-hidden="true">↗</span>
-          </a>
+          {
+            article.data.sourceUrl && (
+              <a
+                class="publication__secondary"
+                href={article.data.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View original publication <span aria-hidden="true">↗</span>
+              </a>
+            )
+          }
           <a class="publication__secondary" href="/#contact">
             Contact the Consulate <span aria-hidden="true">→</span>
           </a>
