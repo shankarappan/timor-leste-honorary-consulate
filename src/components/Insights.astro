@@ -77,21 +77,23 @@ const { articles } = Astro.props;
                     <path d="M12 3v12M7 10l5 5 5-5M5 21h14" />
                   </svg>
                 </a>
-                <a
-                  href={article.data.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View original publication: ${article.data.title} (opens in a new tab)`}
-                >
-                  Original publication
-                  <svg
-                    class="insight-card__icon"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
+                {article.data.sourceUrl && (
+                  <a
+                    href={article.data.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View original publication: ${article.data.title} (opens in a new tab)`}
                   >
-                    <path d="M7 17 17 7M7 7h10v10" />
-                  </svg>
-                </a>
+                    Original publication
+                    <svg
+                      class="insight-card__icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M7 17 17 7M7 7h10v10" />
+                    </svg>
+                  </a>
+                )}
               </div>
               <span class="insight-card__document">
                 {article.data.readingMinutes} min read · PDF available
